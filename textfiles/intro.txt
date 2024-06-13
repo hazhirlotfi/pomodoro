@@ -1,0 +1,8 @@
+Welcome to Pomodoro Project, your key to enhanced productivity. We introduce the Pomodoro technique – an efficient time management method.
+Description of the Pomodoro technique:
+
+    Select a Pomodoro session duration (1 to 6 sessions).
+    Each session is 30 minutes: 25 minutes of focused work and a 5-minute break.
+    After every 4 sessions, enjoy a 15-minute break before starting a new cycle.
+
+Choose your preferred session length and experience improved focus and productivity with Pomodoro Project.

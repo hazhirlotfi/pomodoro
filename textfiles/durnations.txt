@@ -1,0 +1,8 @@
+Here are the time durations for each Pomodoro session option:
+
+    1 session: 30 minutes (25 minutes of work, 5 minutes of break)
+    2 sessions: 60 minutes (50 minutes of work, 10 minutes of break)
+    3 sessions: 90 minutes (75 minutes of work, 15 minutes of break)
+    4 sessions: 120 minutes (100 minutes of work, 20 minutes of break)
+    5 sessions: 150 minutes (125 minutes of work, 25 minutes of break)
+    6 sessions: 180 minutes (150 minutes of work, 30 minutes of break)

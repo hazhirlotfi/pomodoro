@@ -1,14 +1,22 @@
 import time
+from playsound import playsound
 
-def timer(zaman):
-    for min in range(zaman - 1, -1, -1):
+def timer(minute):
+    playsound("soundfiles/Start.wav")
+    for min in range(minute - 1, -1, -1):
         for sec in range(59, -1, -1):
-            print(f"{min}:{sec}",end="\r")
-            time.sleep(1.2)
-            if min == 5:
+            if min == 5 and sec == 0:
+                playsound("soundfiles/Break.wav")
                 print("Rest time")
-    #TODO: divde times that are more than 30 minutes.
-            
+            if min == 0 and sec == 0:
+                playsound("soundfiles/Finish.wav")
+                print("time's up!")
+            if sec < 10:
+                sec = f"0{sec}"
+            print(f"{min}:{sec}",end="\r")
+            time.sleep(1)
+
+
 print(open("textfiles/intro.txt", 'r').read())
 print(open("textfiles/durnations.txt", 'r').read())
 

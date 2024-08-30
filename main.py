@@ -2,19 +2,29 @@ import time
 from playsound import playsound
 
 def timer(minute):
+    pomodoro = int(minute / 30)
     playsound("soundfiles/Start.wav")
-    for min in range(minute - 1, -1, -1):
-        for sec in range(59, -1, -1):
-            if min == 5 and sec == 0:
-                playsound("soundfiles/Break.wav")
-                print("Rest time")
-            if min == 0 and sec == 0:
-                playsound("soundfiles/Finish.wav")
-                print("time's up!")
-            if sec < 10:
-                sec = f"0{sec}"
-            print(f"{min}:{sec}",end="\r")
-            time.sleep(1)
+
+    for _ in range(pomodoro):
+       
+        for mins_left in range(30 - 1, -1, -1):
+            
+            for secs_left in range(59, -1, -1):
+                
+                if mins_left == 5 and secs_left == 0:
+                    playsound("soundfiles/Break.wav")
+                    print("Rest time")
+
+                if mins_left == 0 and secs_left == 0:
+                    playsound("soundfiles/Finish.wav")
+                    print("time's up!")
+
+                if secs_left < 10:
+                    secs_left = f"0{secs_left}"
+                    
+                print(f"{mins_left}:{secs_left}",end="\r")
+
+                time.sleep(1)
 
 
 print(open("textfiles/intro.txt", 'r').read())
@@ -22,21 +32,17 @@ print(open("textfiles/durnations.txt", 'r').read())
 
 user_input = int(input("Choose your Durnation: "))
 
-if user_input == 1:
-    print("Your 30-minute Pomodoro session has begun:")
-    timer(30)
-elif user_input == 2:
-    print("Your 60-minute Pomodoro session has begun:")
-    timer(60)
-elif user_input == 3:
-    print("Your 90-minute Pomodoro session has begun:")
-    timer(90)
-elif user_input == 4:
-    print("Your 120-minute Pomodoro session has begun:")
-    timer(120)
-elif user_input == 5:
-    print("Your 150-minute Pomodoro session has begun:")
-    timer(150)
-elif user_input == 6:
-    print("Your 180-minute Pomodoro session has begun:")
-    timer(180)
+pomos = {
+    1 : 30,
+    2 : 60, 
+    3 : 90,
+    4 : 120,
+    5 : 150,
+    6 : 180
+    }
+
+if user_input in pomos.keys():
+    print(f"Your {pomos[user_input]} minutes durnaion has begun.")
+    timer(pomos[user_input])
+else:
+    print("You pressed the wrong key buddy!, CHOOSE AGAIN")
